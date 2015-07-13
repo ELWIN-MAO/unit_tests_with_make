@@ -19,10 +19,9 @@ int main()
 
 	cout << sum / N << endl;
 
-	if(sum / N > 1e-8)
+	//Looks odd? Imagine if sum is NaN
+	if(!(sum / N < 1e-8 ))
 	{
 		return EXIT_FAILURE;
 	}
-
-	cout << "OK\n";
 }

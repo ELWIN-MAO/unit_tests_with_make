@@ -49,7 +49,7 @@ inline double norm_fro(const Matrix2& m)
 	double f=0;
 	for(int r=0; r < 2; r++)	
 		for(int c=0; c < 2; c++)	
-			f+=m[r][c];
+			f+=m[r][c]*m[r][c];
 
 	return sqrt(f);
 }
@@ -59,7 +59,7 @@ inline Matrix2 inv(const Matrix2& m)
 	double d = 1./(m[0][0]*m[1][1] - m[1][0]*m[0][1]);
 
 	return {
-		 m[1][1]*d, -m[0][1]*d ,
+		 m[1][1]*d,  -m[0][1]*d ,
 		 -m[1][0]*d,  m[0][0]*d 
 	};
 }
